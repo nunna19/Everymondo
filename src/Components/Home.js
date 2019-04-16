@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
-import '../App.scss'
-import axios from 'react-axios';
+import React, { Component } from 'react';
+import '../App.scss';
+import axios from 'axios';
+
+
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+ 
+    state = {
       popularFlight : []
-    }
+    
   }
 
   componentDidMount = () => {
 
       axios.get("https://everymundointernship.herokuapp.com/popularRoutes/BM88RE94IE35")
       .then(respons => {
-        console.log("try", respons)
-        this.setstate({
+        this.setState({
           popularFlight : respons.data
         })
       })
@@ -24,7 +24,12 @@ class Home extends Component {
 
     showPopFlight = () => {
       const listFlight = this.state.popularFlight.map((eachFlight,i) => {
-        console.log(eachFlight.destination)
+       
+        return(
+          <div key={i}>
+
+          </div>
+        )
       })
       return listFlight
     }
@@ -35,8 +40,8 @@ class Home extends Component {
   render(){
     console.log(this.state.popularFlight)
     return(
-      <div className="home">
-          {/* {this.showPopFlight()} */}
+      <div className="home" >
+          {this.showPopFlight()}
       </div>
 
 
