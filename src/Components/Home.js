@@ -27,7 +27,14 @@ class Home extends Component {
        
         return(
           <div key={i}>
+              <img src={eachFlight.routeCoverImage} width="100px"/>
+              <p><span>{eachFlight.origin} - {eachFlight.destination}</span></p>
+             <p><span>{eachFlight.departureDate} - {eachFlight.returnDate}</span></p>
+              <p>{eachFlight.tripType}</p>
+              <p>{eachFlight.fareClass}</p>
+              <p>{eachFlight.priceUSD}</p>
 
+              
           </div>
         )
       })
