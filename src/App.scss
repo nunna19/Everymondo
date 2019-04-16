@@ -1,2 +1,21 @@
 @import '../public/variables.scss';
 
+body{
+  font-size: 2vw;
+}
+
+.showPopFlight {
+ float: left;
+  display: grid;
+  grid-gap: 1rem;
+  }
+  .card {
+   border: 2px solid #e7e7e7;  
+  border-radius: 4px;
+  padding: .5rem;
+   
+  }
+  .imgPopFlight{
+  height: 90px;
+    border: 1px solid red;
+  }

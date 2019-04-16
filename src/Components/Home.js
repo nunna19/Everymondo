@@ -7,8 +7,9 @@ import axios from 'axios';
 class Home extends Component {
  
     state = {
-      popularFlight : []
-    
+      popularFlight : [],
+     
+   
   }
 
   componentDidMount = () => {
@@ -22,20 +23,33 @@ class Home extends Component {
     }
 
 
+
     showPopFlight = () => {
       const listFlight = this.state.popularFlight.map((eachFlight,i) => {
-       
-        return(
-          <div key={i}>
-              <img src={eachFlight.routeCoverImage} width="100px"/>
-              <p><span>{eachFlight.origin} - {eachFlight.destination}</span></p>
-             <p><span>{eachFlight.departureDate} - {eachFlight.returnDate}</span></p>
-              <p>{eachFlight.tripType}</p>
-              <p>{eachFlight.fareClass}</p>
-              <p>{eachFlight.priceUSD}</p>
 
-              
-          </div>
+        let dateTravel = []
+
+        if (eachFlight.tripType !== "roundTrip"){
+          dateTravel = <p><span>{eachFlight.departureDate}</span></p> 
+         }else{
+          dateTravel = <p><span>{eachFlight.departureDate} - {eachFlight.returnDate}</span></p>
+         } 
+
+         return(
+           <div >
+              <div className="showPopFlight">
+                <div className="card" key={i}>
+                  <div className="imgPopFlight" >
+                    <img  src={eachFlight.routeCoverImage} width="130px"/>
+                  </div>
+                    <p><span>{eachFlight.origin} - {eachFlight.destination}</span></p>
+                    {dateTravel}
+                    <p>{eachFlight.tripType}</p>
+                    <p>{eachFlight.fareClass}</p>
+                    <p>${eachFlight.priceUSD}</p>   
+                </div>
+              </div>
+            </div>
         )
       })
       return listFlight
