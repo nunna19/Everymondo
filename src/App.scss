@@ -1,21 +1,32 @@
 @import '../public/variables.scss';
 
 body{
-  font-size: 2vw;
+  font-size: 1vw;
 }
 
 .showPopFlight {
  float: left;
-  display: grid;
-  grid-gap: 1rem;
+ padding: 0.2rem;
   }
-  .card {
-   border: 2px solid #e7e7e7;  
-  border-radius: 4px;
-  padding: .5rem;
-   
+
+  .card { 
+  padding: .2rem;
+  box-shadow: 0 0 1px rgb(238, 235, 235);
   }
-  .imgPopFlight{
-  height: 90px;
-    border: 1px solid red;
+
+  .imgPopFlight img{
+    height: 80px;
+    width: 120px;
   }
+
+.home{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+ 
+
+}
+
+.detailPopFlight{
+
+}

@@ -40,13 +40,15 @@ class Home extends Component {
               <div className="showPopFlight">
                 <div className="card" key={i}>
                   <div className="imgPopFlight" >
-                    <img  src={eachFlight.routeCoverImage} width="130px"/>
+                    <img  src={eachFlight.routeCoverImage} />
                   </div>
+                  <div className="detailPopFlight">
                     <p><span>{eachFlight.origin} - {eachFlight.destination}</span></p>
                     {dateTravel}
                     <p>{eachFlight.tripType}</p>
                     <p>{eachFlight.fareClass}</p>
                     <p>${eachFlight.priceUSD}</p>   
+                  </div>
                 </div>
               </div>
             </div>
