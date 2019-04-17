@@ -21,6 +21,11 @@ class FromSunmit extends Component {
                 </td>
                 <td>
                 <select>
+			            <option value="Passenger">1  Passenger</option>
+		            </select>
+              </td>
+              <td>
+              <select>
 			            <option value="Economy">Economy</option>
 			            <option value="PremiumEconomy">PremiumEconomy</option>
                   <option value="Business">Business</option>
@@ -62,16 +67,10 @@ class FromSunmit extends Component {
            </tr>
            <tr>
               <td>
-                <span>Passenger(s)</span>
-              </td>
-              <td>
                 <span>Promo Code</span>
               </td>
            </tr>
            <tr>
-              <td>
-              <input type="text"  placeholder="Room Search..." onChange={this.updateSearch}/>
-              </td>
               <td>
               <input type="text"  placeholder="Room Search..." onChange={this.updateSearch}/>
               </td>
