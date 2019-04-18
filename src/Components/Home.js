@@ -48,6 +48,7 @@ class Home extends Component {
                     <p>{eachFlight.tripType}</p>
                     <p>{eachFlight.fareClass}</p>
                     <p>${eachFlight.priceUSD}</p>   
+                    <button type="submit" class="btn">VIEW DEAL</button>
                   </div>
                 </div>
               </div>

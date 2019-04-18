@@ -63,18 +63,6 @@ class FromSunmit extends Component {
     })
   }
 
-  // filterResults = () => {
-  //   let filterList = [...this.state.results].filter((data)=>{
-  //      console.log(data)
-  //      return ( 
-  //          data.priceUSD === this.state.priceUSD   && data.departureTime === this.state.departureTime
-  // )
-  // })
-  //    this.setState({
-  //      results:filterList
-  //    })
-  // }
-
   updateSearch = (e) => {
     console.log(e.target.value,e.target.name)
  
@@ -84,23 +72,11 @@ class FromSunmit extends Component {
     })
   }
 
-  // updateSearch = (e) => {
-  //   console.log(e.target.value,e.target.name)
-
-  //   let filterList = [...this.state.results].filter((data)=>{
-  //     console.log(data)
-  //     return data[e.target.name] === e.target.value
-  //   })
-  //   this.setState({
-  //     results:filterList,
-  //     search:e.target.value
-  //   })
-  // }
-
+ 
 
   render(){
     return(
-      <div>
+      <div className="form-popp">
         <div>
         <form onSubmit={this.handleSubmit}>
           <table>
@@ -172,10 +148,10 @@ class FromSunmit extends Component {
            </tr>
            <tr>
               <td>
-                <input name="departureDate" type="date"  className="trip-start" min="2019-01-01" max="2019-12-31" defaultValue="2019-04-28"/>
+                <input name="departureDate" type="date"  className="trip-start" min="2019-01-01" max="2019-12-31" defaultValue="2019-04-28" required/>
               </td>
               <td>
-                <input name="returnDate" type="date"  className="trip-end" min="2019-01-01" max="2019-12-31" defaultValue="2019-05-31" />
+                <input name="returnDate" type="date"  className="trip-end" min="2019-01-01" max="2019-12-31" defaultValue="2019-05-31" required/>
               </td>
            </tr>
            <tr>
@@ -185,7 +161,7 @@ class FromSunmit extends Component {
            </tr>
            <tr>
               <td>
-                {/* <input name="Promotion" type="text"  onChange={this.updateSearch}/> */}
+              
               </td>
               <td>
                 <input type="submit" value="Search"/>
