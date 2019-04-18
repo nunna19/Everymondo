@@ -5,6 +5,11 @@ import axios from 'axios';
 
 class FromSunmit extends Component {
 
+  state = {
+    results : [],
+    departureTime:'',
+    priceUSD:''
+  }
   handleSubmit = (event) => {
     event.preventDefault() 
     let {
@@ -14,11 +19,11 @@ class FromSunmit extends Component {
       departureDate,
       returnDate,
       fareClass,
-      Passenger,
-      Promotion
+      passengerCount
+
     } = event.target
 
-
+   
     let postObj = {
       destination : destination.value,
       origin : origin.value,
@@ -26,16 +31,72 @@ class FromSunmit extends Component {
       departureDate : departureDate.value,
       returnDate : returnDate.value,
       fareClass : fareClass.value,
-      Passenger : Passenger.value,
-      Promotion : Promotion.value
+      passengerCount : Number(passengerCount.value)
     }
-    console.log(postObj);
+    console.log(postObj);////work
 
-    axios.post("https://everymundointernship.herokuapp.com/search/BM88RE94IE35" , postObj).then(res=>{
+    axios.post("https://everymundointernship.herokuapp.com/search/BM88RE94IE35", postObj).then(res=>{
       console.log(res)
+      this.setState({
+        results:res.data[0].routes
+      })
     }).catch(err => console.log(err) )
   
   };
+
+  showResults = () => {
+    let filterList = [...this.state.results].filter((data)=>{
+      console.log(data,this.state.priceUSD,this.state.departureTime)
+      return ( 
+          String(data.priceUSD).includes(this.state.priceUSD)   && data.departureTime.includes(this.state.departureTime)
+ )
+ })
+ console.log(filterList)
+    return filterList.map((res,i)=>{
+      return(
+      <li key={i}>
+        ${res.priceUSD}
+        departureTime:{res.departureTime}
+      </li>
+
+      )
+    })
+  }
+
+  // filterResults = () => {
+  //   let filterList = [...this.state.results].filter((data)=>{
+  //      console.log(data)
+  //      return ( 
+  //          data.priceUSD === this.state.priceUSD   && data.departureTime === this.state.departureTime
+  // )
+  // })
+  //    this.setState({
+  //      results:filterList
+  //    })
+  // }
+
+  updateSearch = (e) => {
+    console.log(e.target.value,e.target.name)
+ 
+    this.setState({
+      // results:filterList,
+      [e.target.name]:String(e.target.value)
+    })
+  }
+
+  // updateSearch = (e) => {
+  //   console.log(e.target.value,e.target.name)
+
+  //   let filterList = [...this.state.results].filter((data)=>{
+  //     console.log(data)
+  //     return data[e.target.name] === e.target.value
+  //   })
+  //   this.setState({
+  //     results:filterList,
+  //     search:e.target.value
+  //   })
+  // }
+
 
   render(){
     return(
@@ -46,14 +107,15 @@ class FromSunmit extends Component {
             <tr>
               <td style={{width: "20px"}}>
                 <select name="tripType">
-			            <option name="roundTrip" value="RoundTrip">Round-trip</option>
-			            <option name="oneWay" value="OneWay">One Way</option>
+			            <option name="roundTrip" value="roundTrip">Round-trip</option>
+			            <option name="oneWay" value="oneWay">One Way</option>
 		            </select>
                 </td>
                 <td>
-                <select name="Passenger">
-			            <option  value="Passenger">1  Passenger</option>
-		            </select>
+
+                <input type="number" name="passengerCount" min="1" max="5" defaultValue="1" ></input>
+             
+
               </td>
               <td>
               <select name="fareClass">
@@ -74,10 +136,30 @@ class FromSunmit extends Component {
            </tr>
            <tr>
               <td>
-                <input type="text" name="destination" placeholder="Room Search..." onChange={this.updateSearch}/>
+                
+                <select name="origin">
+                <option value="MIA">MIA</option>
+			            <option value="LAS">LAS</option>
+                  <option value="DTW">DTW</option>
+                  <option value="MCO">MCO</option>
+                  <option value="PHL">PHL</option>
+                  <option value="RSW">RSW</option>
+                  <option value="FLL">FLL</option> 
+                  <option value="LGA">LGA</option>
+		            </select>
               </td>
               <td>
-                <input type="text" name="origin" placeholder="Room Search..." onChange={this.updateSearch}/>
+                
+                <select name="destination">
+			            <option value="LAS">LAS</option>
+			            <option value="MIA">MIA</option>
+                  <option value="DTW">DTW</option>
+                  <option value="MCO">MCO</option>
+                  <option value="PHL">PHL</option>
+                  <option value="RSW">RSW</option>
+                  <option value="FLL">FLL</option> 
+                  <option value="LGA">LGA</option>
+		            </select>
               </td>
            </tr>
            <tr>
@@ -90,10 +172,10 @@ class FromSunmit extends Component {
            </tr>
            <tr>
               <td>
-                <input name="departureDate" type="date"  className="trip-start" min="2019-01-01" max="2019-12-31" />
+                <input name="departureDate" type="date"  className="trip-start" min="2019-01-01" max="2019-12-31" defaultValue="2019-04-28"/>
               </td>
               <td>
-                <input name="returnDate" type="date"  className="trip-end" min="2019-01-01" max="2019-12-31"/>
+                <input name="returnDate" type="date"  className="trip-end" min="2019-01-01" max="2019-12-31" defaultValue="2019-05-31" />
               </td>
            </tr>
            <tr>
@@ -103,16 +185,22 @@ class FromSunmit extends Component {
            </tr>
            <tr>
               <td>
-                <input name="Promotion" type="text"  onChange={this.updateSearch}/>
+                {/* <input name="Promotion" type="text"  onChange={this.updateSearch}/> */}
               </td>
               <td>
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Search"/>
               </td>
            </tr>
         </table>
         </form>
         </div>
-        
+        <input name="priceUSD" type="text"  onChange={this.updateSearch}/>
+        <input name="departureTime" type="text"  onChange={this.updateSearch}/>
+        <ul>
+          {this.showResults()}
+        </ul>
+
+       
       </div>
 
     )

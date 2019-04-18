@@ -8,8 +8,7 @@ class Home extends Component {
  
     state = {
       popularFlight : [],
-     
-   
+       
   }
 
   componentDidMount = () => {
@@ -36,10 +35,10 @@ class Home extends Component {
          } 
 
          return(
-           <div >
+           <div key={i}>
              
               <div className="showPopFlight">
-                <div className="card" key={i}>
+                <div className="card" >
                   <div className="imgPopFlight" >
                     <img  src={eachFlight.routeCoverImage} />
                   </div>
