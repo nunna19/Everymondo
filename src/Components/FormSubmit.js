@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import '../App.scss';
 import axios from 'axios';
-
+import SearchResults from'./SearchResults';
 
 class FromSunmit extends Component {
 
-  state = {
-    results : [],
-    departureTime:'',
-    priceUSD:''
+  constructor() {
+    super();
+    this.state = {
+      results : [],
+      departureTime:'',
+      priceUSD:''
+    };
   }
+
+  
+
   handleSubmit = (event) => {
     event.preventDefault() 
     let {
@@ -44,14 +50,15 @@ class FromSunmit extends Component {
   
   };
 
-  showResults = () => {
+  showResults = (e) => {
     let filterList = [...this.state.results].filter((data)=>{
-      console.log(data,this.state.priceUSD,this.state.departureTime)
+     
       return ( 
           String(data.priceUSD).includes(this.state.priceUSD)   && data.departureTime.includes(this.state.departureTime)
  )
  })
- console.log(filterList)
+
+
     return filterList.map((res,i)=>{
       return(
       <li key={i}>
@@ -64,10 +71,8 @@ class FromSunmit extends Component {
   }
 
   updateSearch = (e) => {
-    console.log(e.target.value,e.target.name)
- 
+
     this.setState({
-      // results:filterList,
       [e.target.name]:String(e.target.value)
     })
   }
@@ -76,8 +81,9 @@ class FromSunmit extends Component {
 
   render(){
     return(
-      <div className="form-popp">
-        <div>
+      <div className="popup">
+        <div className="popup_inner">
+        <button onClick={this.props.closePopup}>close me</button>
         <form onSubmit={this.handleSubmit}>
           <table>
             <tr>
@@ -169,12 +175,10 @@ class FromSunmit extends Component {
            </tr>
         </table>
         </form>
+        
         </div>
-        <input name="priceUSD" type="text"  onChange={this.updateSearch}/>
-        <input name="departureTime" type="text"  onChange={this.updateSearch}/>
-        <ul>
-          {this.showResults()}
-        </ul>
+
+         <SearchResults Results={this.showResults()} search={this.updateSearch}/>
 
        
       </div>
