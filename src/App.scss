@@ -1,4 +1,5 @@
 // @import '../public/variables.scss';
+$primary-color: rgb(0, 89, 255);
 
 body{
   font-size: 1vw;
@@ -37,7 +38,6 @@ body{
 
 .btn {
   background-color:rgb(35, 115, 229);
-  color: white;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -45,6 +45,7 @@ body{
   border-radius: 2px;
   font-size: 2vw;
   padding: 0.8vw;
+  
 }
 .btn:hover{
   background-color: rgb(0, 162, 255);
@@ -72,6 +73,104 @@ body{
 }
 
 .HomeForm{
-  background-image: url("/airplane.png");
+  background: url("/airplane2.jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;;
   width: 100%;
+  position: fixed;
+  left: 0;
+  top: 30px;
+  bottom: 0;
+}
+
+
+.linkBookFlight{
+border-right:1px solid rgb(116, 113, 113);
+
+}
+.linkBookFlight , .linkDeal{
+  padding: 0px 20px 0 20px;
+  text-decoration: none;
+  color: rgb(66, 66, 66);
+  font-size: 15px;
+}
+.linkBookFlight:hover, .linkDeal:hover{
+ color: rgb(74, 154, 230);
+
+
+}
+.linkBookFlight:focus , .linkDeal:focus{
+  color: $primary-color;
+  
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(121, 138, 143);
+  color: white;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.BookForm{
+  box-shadow: 0 0 10px rgb(28, 34, 36);
+  padding: 20px;
+  position: absolute;
+  left: 10vw;
+   top: 0;
+   bottom: 0;
+  display: block;
+  width:45vw;
+  height: 35vh;
+  margin: auto;
+ 
+}
+.input input{
+  margin-top:10px;
+}
+
+
+.iconReturnImg{
+  width: 3vw;
+  margin-bottom: -8px;
+  margin-right: 0.2vw;
+}
+.iconDepartImg{
+  width: 2.5vw;
+  margin-bottom: -5px;
+  margin-right: 0.6vw;
+}
+.iconRoundTrip{
+  // margin:0 2vw 0 2vw;
+  width: 2vw;
+  margin-bottom: -5px;
+
+}
+.passenger{
+  font-size: 1.5vw;
+  display: flex;
+  align-items: center;
+}
+.tripType, .fareClass{
+background-color: white;
+}
+.HomeForm1{
+  display: flex;
+  justify-content: space-between;
+}
+.noDetail:hover{
+color: $primary-color;
+}
+
+.HomeSearch{
+  
 }

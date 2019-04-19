@@ -15,48 +15,48 @@ class HomeForm extends Component {
       <div className="HomeForm" >
       <div className="BookForm">
       <form>
-                
-              <div>
+     
+              <div className="HomeForm1">
                 <select className="tripType" name="tripType">
 			            <option name="roundTrip" value="roundTrip">Round-trip</option>
 			            <option name="oneWay" value="oneWay">One Way</option>
 		            </select>
-                <input type="number" name="passengerCount" min="1" max="5" defaultValue="1" ></input>
+
                   
-              <select name="fareClass"  >
+              <select className="fareClass" name="fareClass"  >
 			            <option value="Economy">Economy</option>
 			            <option value="PremiumEconomy">Premium Economy</option>
                   <option value="Business">Business</option>
                   <option value="FirstClass">First Class</option>
 		            </select>
+
+                <span className="passenger" >passenger:<input  type="number" name="passengerCount" min="1" max="5" defaultValue="1" ></input></span>
                 </div>
 
-         
-                <span>From</span>
-                <input name="origin" type ="text"/>
-              
-		           
-              
-                <span>To</span>
-                <input name="destination" type ="text"/>
-			        
-       
-        
-                <span>Depart</span>
-                <input  name="departureDate" type="date"  className="trip-start"  required/>
+              <div className="input">
+                <input  className="origin" name="origin" type ="text" placeholder="origin..."/>
 
-               
-                  <div>
-                  <span>Return</span>
+                  <img className="iconRoundTrip" src="./roundTrip.png"/>        
+
+                <input className="destination" name="destination" type ="text" placeholder="destination..."/>
+                </div>
+
+                <br/>
+
+                <div>
+                <img src="./depart1.png" className="iconDepartImg" />  
+                <input  name="departureDate" type="date"  className="trip-start"  required/>
+                </div>
+
+               <div>
+                  <img src="./arrived1.png" className="iconReturnImg"/>
                   <input name="returnDate" type="date"  className="trip-end"   required/>
-                  </div>
+                </div>
               
- 
-                <span>Promo Code</span>
         
-            
-                <input type="submit" value="Search"/>
-  
+              <div className="HomeSearch">
+                <input  type="submit" value="Search"/>
+              </div>
         </form>
         
 

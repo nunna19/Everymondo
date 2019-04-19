@@ -53,7 +53,7 @@ class Home extends Component {
                     <p>{eachFlight.tripType}</p>
                     <p>{eachFlight.fareClass}</p>
                     <p>${eachFlight.priceUSD}</p>   
-                    <button type="submit" class="btn">
+                    <button className="veiwDeal" type="submit" class="btn">
                       <Link to={`/FormSubmit?price=${eachFlight.priceUSD}&fareClass=${eachFlight.fareClass}&tripType=${eachFlight.tripType}&origin=${eachFlight.origin}&destination=${eachFlight.destination}&departureDate=${departureDate}&returnDate=${returnDate}`}>VIEW DEAL </Link> 
                     </button>
                   </div>
@@ -74,7 +74,7 @@ class Home extends Component {
     console.log(this.state.popularFlight)
     return(
       <div className="home" >
-          <HomeForm/>
+          {/* <HomeForm/> */}
           {this.showPopFlight()}
       </div>
 

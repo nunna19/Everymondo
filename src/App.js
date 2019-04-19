@@ -8,7 +8,7 @@ import Deal from './Components/Deal.js';
 import HomeFrom from './Components/HomeForm';
 import FormSubmit from './Components/FormSubmit';
 import SearchResults from './Components/SearchResults';
-
+import NoDetail from './Components/NoDetail';
 
 
 
@@ -35,9 +35,10 @@ class App extends Component {
     return (
       <div className="App">
 
-      <div>
-       <Link to="/">Book Flight</Link>
-       <Link to="/Deal">Deal</Link>
+      <div className="linkHomeForm">
+      <br/>
+       <Link className="linkBookFlight" to="/">Book Flight</Link>
+       <Link className="linkDeal" to="/Deal">Deal</Link>
        </div>
 
       <Switch>
@@ -57,10 +58,21 @@ class App extends Component {
             exact path='/Filter'  
             render={(props) => <SearchResults {...props} {...this.state} updateSearch={this.updateSearch}/>}
           />
+           <Route
+            exact path='/NoDetail'  
+            render={(props) => <NoDetail {...props} {...this.state} updateSearch={this.updateSearch}/>}
+          />
       </Switch>
 
   
-      
+      <div className ="footer">
+       <p>@Company Skyness</p>
+       <p>
+       <Link className="noDetail" to="/NoDetail">PRIVACY POLICY |  </Link>
+       <Link className="noDetail" to="/NoDetail">TERMS & CONDITIONS  |  </Link>
+       <Link className="noDetail" to="/NoDetail">ABOUT </Link> 
+       </p>
+      </div>
         
       </div>
     );
