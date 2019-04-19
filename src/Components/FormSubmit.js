@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../App.scss';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-
 import queryString from 'query-string'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
@@ -13,14 +12,13 @@ class FromSunmit extends Component {
     this.state = {
       results : [],
       departureTime:0,
-      //priceUSD:'',
       priceUSD:0
     };
   }
 
   componentDidMount(){
     const values = queryString.parse(this.props.location.search)
-    console.log(values) // "top"
+    console.log(values) 
     this.setState(values)
   }
 
@@ -47,15 +45,12 @@ class FromSunmit extends Component {
       fareClass : fareClass.value,
       passengerCount : Number(passengerCount.value)
     }
-
-
-    console.log(this)
+   
 
 
     axios.post("https://everymundointernship.herokuapp.com/search/BM88RE94IE35", postObj).then(res=>{
       console.log(res)
    
-
       this.props.setResults(res.data[0].routes)
       this.props.history.push('/Filter')
 
@@ -137,8 +132,6 @@ class FromSunmit extends Component {
         </div>
         </div>
         <NotificationContainer/>
- 
-         {/* <SearchResults priceUSD={this.state.priceUSD} departureTime={this.state.departureTime} Results={this.showResults()} search={this.updateSearch}/> */}
 
        
       </div>

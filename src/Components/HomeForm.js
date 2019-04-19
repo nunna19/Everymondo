@@ -7,8 +7,6 @@ import '../App.scss';
 class HomeForm extends Component {
 
 
-
-
   render(){
   
     return(
