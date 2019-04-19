@@ -31,7 +31,6 @@ class SearchResults extends Component {
            <td>{res.departureTime}</td> 
             <td>${res.priceUSD}</td>
           </tr>
-
       )
     })
   }
