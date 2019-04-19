@@ -20,7 +20,7 @@ class SearchResults extends Component {
       console.log(data)
       return ( 
           data.priceUSD > this.props.priceUSD && Number(data.departureTime.replace(':','')) > this.props.departureTime
-          //String(data.priceUSD).includes(this.props.priceUSD)   && data.departureTime.includes(this.props.departureTime)
+         
 
       )
     })
@@ -28,12 +28,14 @@ class SearchResults extends Component {
 
     return filterList.map((res,i)=>{
       return(
-      <li key={i}>
-        ${res.priceUSD}
-        departureTime:{res.departureTime}
-      </li>
+       
 
+          <tr key={i}>
+           <td>{res.departureTime}</td> 
+            <td>${res.priceUSD}</td>
+          </tr>
 
+       
 
       )
     })
@@ -47,16 +49,23 @@ class SearchResults extends Component {
       
       <div className="SearchResults">
       <Slider className="slider" max="200" name="priceUSD"  onChange={(e) => this.props.updateSearch(e, "priceUSD")}/>
-     <span className="sliderText" >${this.props.priceUSD}</span> 
+     <span className="sliderText1" >${this.props.priceUSD }</span> 
 
       <Slider className="slider"  min={0} step={100} max={2400} name="departureTime"  onChange={(e) => this.props.updateSearch(e, "departureTime")}/>
-      <span className="sliderText" >Departure Time:{this.props.departureTime}</span>
+      <span className="sliderText" >Departure Time:<span className="numberTime">{this.props.departureTime}</span></span>
+      <div className="table1">
+      <table className="table">
+        <tr>
+          <th>Departure Time</th> 
+          <th>priceUSD</th>
+        </tr>
+
+        {this.showResults()}
+
+      </table>
+      </div>
       
-
-        <ul>
-          {this.showResults()}
-        </ul>
-
+      
        
       </div>
 

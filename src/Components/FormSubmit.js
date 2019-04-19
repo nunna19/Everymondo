@@ -3,8 +3,6 @@ import '../App.scss';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import SearchResults from'./SearchResults';
 import queryString from 'query-string'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
@@ -56,9 +54,7 @@ class FromSunmit extends Component {
 
     axios.post("https://everymundointernship.herokuapp.com/search/BM88RE94IE35", postObj).then(res=>{
       console.log(res)
-      // this.setState({
-      //   results:res.data[0].routes
-      // })
+   
 
       this.props.setResults(res.data[0].routes)
       this.props.history.push('/Filter')
@@ -79,9 +75,14 @@ class FromSunmit extends Component {
     console.log(this)
     return(
       <div className="popup"> 
-        <div className="popup_inner"><Link to="/">XXXXXXX</Link>
+        <div className="popup_inner">
+
+       
+
+        <div className="inner">
+        <div className="back-btn" ><Link className="back" to="/Deal">X</Link></div>
         <form onSubmit={this.handleSubmit}>
-                  {/* <FontAwesomeIcon icon = "times-circle" /> */}
+                 
               <div className="HomeForm1" >
                 <select defaultValue={this.state.tripType} className="tripType" name="tripType">
 			            <option name="roundTrip" value="roundTrip">Round-trip</option>
@@ -125,14 +126,15 @@ class FromSunmit extends Component {
                    :
                   ""
                 }
-              </div>
- 
-              <div className="HomeSearch">
+                 <div className="HomeSearch">
                 <input  type="submit" value="Search"/>
               </div>
+              </div>
+ 
+             
   
         </form>
-        
+        </div>
         </div>
         <NotificationContainer/>
  

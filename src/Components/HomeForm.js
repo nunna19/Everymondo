@@ -55,7 +55,7 @@ class HomeForm extends Component {
               
         
               <div className="HomeSearch">
-                <input  type="submit" value="Search"/>
+              <Link className="linkDeal" to="/NoDetail"><input  type="submit" value="Search" /></Link> 
               </div>
         </form>
         

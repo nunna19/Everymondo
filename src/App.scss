@@ -1,14 +1,15 @@
-// @import '../public/variables.scss';
+
 $primary-color: rgb(0, 89, 255);
 
 body{
   font-size: 1vw;
+  height: auto;
 }
 
 .showPopFlight {
  float: left;
  padding: 0.2rem;
-
+ margin-bottom: 10%;
   }
 
   .card { 
@@ -145,6 +146,7 @@ a{
   font-size: 1.5vw;
   display: flex;
   align-items: center;
+  margin-right: 25px;
 }
 .tripType, .fareClass{
 background-color: white;
@@ -168,10 +170,9 @@ color: $primary-color;
 }
 .linkHomeForm{
   background-color: rgb(170, 228, 224);
+  padding: 5px
 }
 
-
-/////Deal companent
 
 .showPopFlight{
   margin-top: 20px;
@@ -191,7 +192,7 @@ color: $primary-color;
 
 .popup_inner{
   box-shadow: 0 0 30px rgb(139, 139, 139);
-  padding: 20px;
+ 
   position: absolute;
   left: 0;
    right: 0;
@@ -204,6 +205,21 @@ color: $primary-color;
 
 }
 
+.inner{
+ padding: 20px;
+ box-shadow: 0 0 30px rgb(139, 139, 139);
+ 
+ position: absolute;
+ left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+ display: block;
+ width:45vw;
+ height: 35vh;
+ margin: auto;
+}
+
 .SearchResults{
   margin-top: 5%;
 }
@@ -213,7 +229,55 @@ color: $primary-color;
   margin: 0 auto;
 }
 
-.sliderText{
+.sliderText, .sliderText1{
   font-size: 15px;
   margin-left: 30%;
+}
+.numberTime, .sliderText1{
+  color: $primary-color;
+  }
+
+.back{
+  background-color: gray;
+  padding: 3px;
+  
+  
+}
+.back-btn{
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top:20px;
+  margin-bottom: 10%;
+}
+
+th, td {
+  padding: 10px;
+  box-shadow: 1px 1px 1px 1px#dad8d8;
+ width: 200px;
+ padding: 10px;
+ text-align: center;
+}
+.SearchResults{
+  font-size: 15px;
+}
+
+.D-priceUSD{
+  color: red;
+  font-size: 15px;
+
+}
+.div-D-priceUSD, .D-Where{
+  display: flex;
+  justify-content: flex-end;
+}
+.D-Where{
+  color: rgb(0, 0, 0);
+  font-size: 15px;
 }

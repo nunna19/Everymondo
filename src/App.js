@@ -31,14 +31,14 @@ class App extends Component {
     })
   }
   render() {
-    console.log('how???')
+  
     return (
       <div className="App">
 
       <div className="linkHomeForm">
-      <br/>
+      
        <Link className="linkBookFlight" to="/">Book Flight</Link>
-       <Link className="linkDeal" to="/Deal">Deal</Link>
+       <Link className="linkDeal" to="/Deal">Deals</Link>
        </div>
 
       <Switch>
