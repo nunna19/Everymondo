@@ -121,7 +121,7 @@ class FromSunmit extends Component {
                    :
                   ""
                 }
-                 <div className="HomeSearch">
+                 <div className="HomeSearch HomeSearch2">
                 <input  type="submit" value="Search"/>
               </div>
               </div>

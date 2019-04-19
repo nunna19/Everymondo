@@ -281,3 +281,61 @@ th, td {
   color: rgb(0, 0, 0);
   font-size: 15px;
 }
+
+
+@media screen and (max-width:768px){
+  body{
+    font-size: 3vw;
+    height: auto;
+  }
+
+  .HomeForm1{
+    display: block;
+  }
+  .passenger{
+    font-size: 15px;
+  }
+  .HomeSearch{
+    background-color: rgb(132, 204, 252);
+    display: block;
+    text-align: center;
+  }
+  .iconRoundTrip{
+    width: 4vw;
+    display: flex;
+  
+  }
+  .imgPopFlight img{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .D-Where{
+    font-size: 25px;
+  }
+  .D-priceUSD{
+    font-size: 25px;
+  }
+  .btn{
+    padding: 15px;
+    font-size: 25px;
+  }
+  .HomeSearch2{
+    display: block;
+    margin: 25% 10% 0 50%;
+   float: right;
+  }
+   .inner{
+     padding: 10px;
+   }
+   .slider{
+    width: 400px;
+   }
+   .linkBookFlight, .linkDeal{
+     font-size: 25px;
+   }
+   .HomeForm,.popup{
+     top:35px;
+   }
+  
+}
