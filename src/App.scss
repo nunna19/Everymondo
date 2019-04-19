@@ -67,7 +67,7 @@ body{
   width: 100%;
   position: fixed;
   left: 0;
-  top: 30px;
+  top: 27px;
   bottom: 0;
 }
 
@@ -97,7 +97,7 @@ border-right:1px solid rgb(116, 113, 113);
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(121, 138, 143);
+  background-color: rgb(126, 150, 148);
   color: white;
   text-align: center;
 }
@@ -167,8 +167,7 @@ color: $primary-color;
   color: white;
 }
 .linkHomeForm{
-  border-top: 1px solid rgb(165, 165, 165)
-  
+  background-color: rgb(170, 228, 224);
 }
 
 
@@ -186,12 +185,12 @@ color: $primary-color;
   width: 100%;
   position: fixed;
   left: 0;
-  top: 30px;
+  top: 27px;
   bottom: 0;
 }
 
 .popup_inner{
-  box-shadow: 0 0 20px rgb(173, 173, 173);
+  box-shadow: 0 0 30px rgb(139, 139, 139);
   padding: 20px;
   position: absolute;
   left: 0;
@@ -203,4 +202,18 @@ color: $primary-color;
   height: 35vh;
   margin: auto;
 
+}
+
+.SearchResults{
+  margin-top: 5%;
+}
+
+.slider{
+  width: 500px;
+  margin: 0 auto;
+}
+
+.sliderText{
+  font-size: 15px;
+  margin-left: 30%;
 }

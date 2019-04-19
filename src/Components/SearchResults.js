@@ -33,6 +33,8 @@ class SearchResults extends Component {
         departureTime:{res.departureTime}
       </li>
 
+
+
       )
     })
   }
@@ -44,12 +46,12 @@ class SearchResults extends Component {
 
       
       <div className="SearchResults">
-      <Slider max="200" name="priceUSD"  onChange={(e) => this.props.updateSearch(e, "priceUSD")}/>
-      ${this.props.priceUSD}
+      <Slider className="slider" max="200" name="priceUSD"  onChange={(e) => this.props.updateSearch(e, "priceUSD")}/>
+     <span className="sliderText" >${this.props.priceUSD}</span> 
 
-      <Slider min={0} step={100} max={2400} name="departureTime"  onChange={(e) => this.props.updateSearch(e, "departureTime")}/>
-
-      {this.props.departureTime}
+      <Slider className="slider"  min={0} step={100} max={2400} name="departureTime"  onChange={(e) => this.props.updateSearch(e, "departureTime")}/>
+      <span className="sliderText" >Departure Time:{this.props.departureTime}</span>
+      
 
         <ul>
           {this.showResults()}
