@@ -44,15 +44,13 @@ class SearchResults extends Component {
 
       
       <div className="SearchResults">
-      <Slider name="priceUSD"  onChange={(e) => this.props.updateSearch(e, "priceUSD")}/>
+      <Slider max="200" name="priceUSD"  onChange={(e) => this.props.updateSearch(e, "priceUSD")}/>
       ${this.props.priceUSD}
 
       <Slider min={0} step={100} max={2400} name="departureTime"  onChange={(e) => this.props.updateSearch(e, "departureTime")}/>
 
       {this.props.departureTime}
 
-        {/* <input name="priceUSD" type="text"  onChange={this.updateSearch}/>
-        <input name="departureTime" type="text"  onChange={this.updateSearch}/>  */}
         <ul>
           {this.showResults()}
         </ul>

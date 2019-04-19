@@ -1,4 +1,4 @@
-@import '../public/variables.scss';
+// @import '../public/variables.scss';
 
 body{
   font-size: 1vw;
@@ -25,7 +25,6 @@ body{
   margin-left: 5%;
   margin-right: 5%;
  
-
 }
 
 .trip-start{
@@ -51,23 +50,11 @@ body{
   background-color: rgb(0, 162, 255);
 }
 
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
 
 .popup_inner{
   box-shadow: 0 0 1px rgb(238, 235, 235);
   padding: 20px;
   position: absolute;
-  // left: 20%;
-  // right: 20%;
-  // top: 30%;
-  // bottom: 30%;
   left: 0;
    right: 0;
    top: 0;
@@ -79,26 +66,12 @@ body{
   background-color: white;
 
 }
-.popup{
-  background: rgba(255,255,255,0.7);
-  width:100vw;
-  height:100vh;
-  position: fixed;
-  z-index: 999;
-  border:2px solid black;
-}
-// .App{
-//   position: fixed;
-//   width: 100%;
-//   height: 100%;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   margin: auto;
-//   background-color: rgba(0,0,0, 0.5);
-// }
 
 .message{
   font-size: 10px;
+}
+
+.HomeForm{
+  background-image: url("/airplane.png");
+  width: 100%;
 }

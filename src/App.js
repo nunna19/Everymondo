@@ -4,7 +4,8 @@ import 'react-notifications/lib/notifications.css';
 import 'rc-slider/assets/index.css';
 
 import './App.scss';
-import Home from './Components/Home.js';
+import Deal from './Components/Deal.js';
+import HomeFrom from './Components/HomeForm';
 import FormSubmit from './Components/FormSubmit';
 import SearchResults from './Components/SearchResults';
 
@@ -15,7 +16,6 @@ import SearchResults from './Components/SearchResults';
 class App extends Component {
 
   state={
-    //empty
     results: [],
     departureTime: 0,
     priceUSD:0
@@ -35,10 +35,19 @@ class App extends Component {
     return (
       <div className="App">
 
+      <div>
+       <Link to="/">Book Flight</Link>
+       <Link to="/Deal">Deal</Link>
+       </div>
+
       <Switch>
           <Route
             exact path='/'
-            render={(props) => <Home {...props} />}
+            render={(props) => <HomeFrom {...props} />}
+          />
+            <Route
+            exact path='/Deal'
+            render={(props) => <Deal {...props} />}
           />
           <Route
             exact path='/FormSubmit'
@@ -50,7 +59,7 @@ class App extends Component {
           />
       </Switch>
 
-      {/* <Home/> */}
+  
       
         
       </div>

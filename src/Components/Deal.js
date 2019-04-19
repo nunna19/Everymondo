@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import '../App.scss';
 import axios from 'axios';
-import FormSubmit from './FormSubmit';
+import HomeForm from "./HomeForm.js"
 import moment from 'moment'
 
 
@@ -42,7 +42,6 @@ class Home extends Component {
 
          return(
            <div key={i}>
-             
               <div className="showPopFlight">
                 <div className="card" >
                   <div className="imgPopFlight" >
@@ -75,6 +74,7 @@ class Home extends Component {
     console.log(this.state.popularFlight)
     return(
       <div className="home" >
+          <HomeForm/>
           {this.showPopFlight()}
       </div>
 

@@ -89,7 +89,7 @@ class FromSunmit extends Component {
 		            </select>
                 <input type="number" name="passengerCount" min="1" max="5" defaultValue="1" ></input>
                   
-              <select defaultValue={this.state.fareClass} name="fareClass">
+              <select defaultValue={this.state.fareClass} name="fareClass"  >
 			            <option value="Economy">Economy</option>
 			            <option value="PremiumEconomy">Premium Economy</option>
                   <option value="Business">Business</option>
@@ -99,29 +99,13 @@ class FromSunmit extends Component {
 
          
                 <span>From</span>
-        
-                <select defaultValue={this.state.origin} name="origin">
-                  <option value="MIA">MIA</option>
-			            <option value="LAS">LAS</option>
-                  <option value="DTW">DTW</option>
-                  <option value="MCO">MCO</option>
-                  <option  value="PHL">PHL</option>
-                  <option value="RSW">RSW</option>
-                  <option value="FLL">FLL</option> 
-                  <option value="LGA">LGA</option>
-		            </select>
+                <input defaultValue={this.state.origin} name="origin" type ="text"/>
+              
+		           
               
                 <span>To</span>
-                <select defaultValue={this.state.destination} name="destination">
-			            <option value="LAS">LAS</option>
-			            <option value="MIA">MIA</option>
-                  <option value="DTW">DTW</option>
-                  <option value="MCO">MCO</option>
-                  <option value="PHL">PHL</option>
-                  <option value="RSW">RSW</option>
-                  <option value="FLL">FLL</option> 
-                  <option value="LGA">LGA</option>
-		            </select>
+                <input defaultValue={this.state.destination} name="destination" type ="text"/>
+			        
        
         
                 <span>Depart</span>
