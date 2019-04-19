@@ -160,9 +160,11 @@ color: $primary-color;
 }
 
 .HomeSearch{
-  margin-top: 3vh;
+  margin-top: 10vh;
   display: flex;
   justify-content: flex-end;
+  background-color: rgb(77, 106, 201)
+  
 }
 .HomeSearch input:hover{
   background-color: rgb(56, 135, 255);
