@@ -82,49 +82,54 @@ class FromSunmit extends Component {
         <div className="popup_inner"><Link to="/">XXXXXXX</Link>
         <form onSubmit={this.handleSubmit}>
                   {/* <FontAwesomeIcon icon = "times-circle" /> */}
-              <div>
+              <div className="HomeForm1" >
                 <select defaultValue={this.state.tripType} className="tripType" name="tripType">
 			            <option name="roundTrip" value="roundTrip">Round-trip</option>
 			            <option name="oneWay" value="oneWay">One Way</option>
 		            </select>
-                <input type="number" name="passengerCount" min="1" max="5" defaultValue="1" ></input>
+                
                   
-              <select defaultValue={this.state.fareClass} name="fareClass"  >
+              <select className="fareClass" defaultValue={this.state.fareClass} name="fareClass"  >
 			            <option value="Economy">Economy</option>
 			            <option value="PremiumEconomy">Premium Economy</option>
                   <option value="Business">Business</option>
                   <option value="FirstClass">First Class</option>
 		            </select>
+
+                <span className="passenger" >passenger:<input  type="number" name="passengerCount" min="1" max="5" defaultValue="1" ></input></span>
+
                 </div>
 
          
-                <span>From</span>
+                <div className="input">
                 <input defaultValue={this.state.origin} name="origin" type ="text"/>
               
-		           
+		              <img className="iconRoundTrip" src="./roundTrip.png"/> 
               
-                <span>To</span>
+               
                 <input defaultValue={this.state.destination} name="destination" type ="text"/>
-			        
+			        </div>
        
-        
-                <span>Depart</span>
-                <input defaultValue={this.state.departureDate} name="departureDate" type="date"  className="trip-start"  required/>
+              <br/>
 
+              <div>
+              <img src="./depart1.png" className="iconDepartImg" />
+                <input defaultValue={this.state.departureDate} name="departureDate" type="date"  className="trip-start"  required/>
+                </div>
+              <div>
                 { this.state.tripType == "roundTrip" ? 
                   <div>
-                  <span>Return</span>
+                   <img src="./arrived1.png" className="iconReturnImg"/>
                   <input defaultValue={this.state.returnDate} name="returnDate" type="date"  className="trip-end"   required/>
                   </div>
                    :
                   ""
-              
                 }
+              </div>
  
-                <span>Promo Code</span>
-        
-            
-                <input type="submit" value="Search"/>
+              <div className="HomeSearch">
+                <input  type="submit" value="Search"/>
+              </div>
   
         </form>
         

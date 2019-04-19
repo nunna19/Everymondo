@@ -52,21 +52,7 @@ body{
 }
 
 
-.popup_inner{
-  box-shadow: 0 0 1px rgb(238, 235, 235);
-  padding: 20px;
-  position: absolute;
-  left: 0;
-   right: 0;
-   top: 0;
-   bottom: 0;
-  display: block;
-  width:50vw;
-  height: 50vh;
-  margin: auto;
-  background-color: white;
 
-}
 
 .message{
   font-size: 10px;
@@ -150,7 +136,7 @@ a{
   margin-right: 0.6vw;
 }
 .iconRoundTrip{
-  // margin:0 2vw 0 2vw;
+  margin:0 1vw 0 1vw;
   width: 2vw;
   margin-bottom: -5px;
 
@@ -172,5 +158,49 @@ color: $primary-color;
 }
 
 .HomeSearch{
+  margin-top: 3vh;
+  display: flex;
+  justify-content: flex-end;
+}
+.HomeSearch input:hover{
+  background-color: rgb(56, 135, 255);
+  color: white;
+}
+.linkHomeForm{
+  border-top: 1px solid rgb(165, 165, 165)
   
+}
+
+
+/////Deal companent
+
+.showPopFlight{
+  margin-top: 20px;
+}
+.popup{
+  background: url("/aircraft.jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 30px;
+  bottom: 0;
+}
+
+.popup_inner{
+  box-shadow: 0 0 20px rgb(173, 173, 173);
+  padding: 20px;
+  position: absolute;
+  left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+  display: block;
+  width:45vw;
+  height: 35vh;
+  margin: auto;
+
 }
