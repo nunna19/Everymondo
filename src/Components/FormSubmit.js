@@ -49,13 +49,20 @@ class FromSunmit extends Component {
       fareClass : fareClass.value,
       passengerCount : Number(passengerCount.value)
     }
-    console.log(postObj);////work
+
+
+    console.log(this)
+
 
     axios.post("https://everymundointernship.herokuapp.com/search/BM88RE94IE35", postObj).then(res=>{
       console.log(res)
-      this.setState({
-        results:res.data[0].routes
-      })
+      // this.setState({
+      //   results:res.data[0].routes
+      // })
+
+      this.props.setResults(res.data[0].routes)
+      this.props.history.push('/Filter')
+
     }).catch(err => {
       
         console.log(err)
@@ -65,34 +72,6 @@ class FromSunmit extends Component {
   
   };
 
-  showResults = (e) => {
-    let filterList = [...this.state.results].filter((data)=>{
-      console.log(data)
-      return ( 
-          data.priceUSD > this.state.priceUSD && Number(data.departureTime.replace(':','')) > this.state.departureTime
-          //String(data.priceUSD).includes(this.state.priceUSD)   && data.departureTime.includes(this.state.departureTime)
-
- )
- })
-
-
-    return filterList.map((res,i)=>{
-      return(
-      <li key={i}>
-        ${res.priceUSD}
-        departureTime:{res.departureTime}
-      </li>
-
-      )
-    })
-  }
-
-  updateSearch = (e, name) => {
-    console.log(e, name)
-    this.setState({
-      [name]:String(e)
-    })
-  }
 
  
 
@@ -167,8 +146,8 @@ class FromSunmit extends Component {
         
         </div>
         <NotificationContainer/>
-
-         <SearchResults priceUSD={this.state.priceUSD} departureTime={this.state.departureTime} Results={this.showResults()} search={this.updateSearch}/>
+ 
+         {/* <SearchResults priceUSD={this.state.priceUSD} departureTime={this.state.departureTime} Results={this.showResults()} search={this.updateSearch}/> */}
 
        
       </div>
