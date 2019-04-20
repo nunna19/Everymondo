@@ -2,7 +2,7 @@
 $primary-color: rgb(0, 89, 255);
 
 body{
-  font-size: 18px;
+  font-size: 15px;
   height: auto;
 }
 
@@ -31,6 +31,14 @@ body{
 
 .trip-start{
   margin: .4rem 0;
+  height: 25px;
+  font-size: 20px;
+  padding: 5px;
+}
+.trip-end{
+  height: 25px;
+  font-size: 20px;
+  padding: 5px;
 }
 
 .note {
@@ -117,7 +125,7 @@ a{
    bottom: 0;
   display: block;
   width:50%;
-  height: 50%;
+  height: 30%;
   margin: auto;
   background: rgba(255,255,255,.6);
  
@@ -125,6 +133,8 @@ a{
 
 .input input{
   margin-top:10px;
+
+  
 }
 
 
@@ -146,7 +156,7 @@ a{
 }
 input[type="text"]
 {
-    font-size:20px;
+    font-size:25px;
 }
 .passenger{
   font-size: 20px;
@@ -161,26 +171,27 @@ font-size: 20px;
 .HomeForm1{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 35px;
 }
 .noDetail:hover{
 color: $primary-color;
 }
 
 .HomeSearch{
-  margin-top: 8vh;
+
   display: flex;
   justify-content: flex-end;
- 
-  
-}
-.HomeSearch input:hover{
-  background-color: rgb(56, 135, 255);
-  color: white;
 }
 .searchInput{
   font-size: 20px;
   padding: 5px;
+  background-color: rgb(24, 113, 248);
 }
+.searchInput:hover{
+  background-color: rgb(56, 135, 255);
+  color: white;
+}
+
 .linkHomeForm{
   background-color: rgb(170, 228, 224);
   padding: 5px
