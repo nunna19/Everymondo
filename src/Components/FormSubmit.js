@@ -97,7 +97,7 @@ class FromSunmit extends Component {
                 </div>
 
          
-                <div className="input">
+                <div className="input input2">
                 <input defaultValue={this.state.origin} name="origin" type ="text"/>
               
 		              <img className="iconRoundTrip" src="./roundTrip.png"/> 
