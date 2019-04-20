@@ -32,7 +32,7 @@ class HomeForm extends Component {
                 <span className="passenger" >passenger:<input  type="number" name="passengerCount" min="1" max="5" defaultValue="1" ></input></span>
                 </div>
 
-              <div className="input">
+              <div className="Flight">
                 <input  className="origin" name="origin" type ="text" placeholder="origin..."/>
 
                   <img className="iconRoundTrip" src="./roundTrip.png"/>        

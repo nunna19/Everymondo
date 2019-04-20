@@ -1,8 +1,7 @@
-
 $primary-color: rgb(0, 89, 255);
 
 body{
-  font-size: 15px;
+  font-size: 18px;
   height: auto;
 }
 
@@ -29,17 +28,11 @@ body{
  
 }
 
-.trip-start{
+.trip-start , .trip-end{
   margin: .4rem 0;
-  height: 25px;
   font-size: 20px;
-  padding: 5px;
 }
-.trip-end{
-  height: 25px;
-  font-size: 20px;
-  padding: 5px;
-}
+
 
 .note {
   font-size: .8em;
@@ -131,14 +124,11 @@ a{
  
 }
 
-.input input{
-  margin-top:10px;
+.Flight input{
+  margin-top:20px;
+margin-left: 35px;
 }
-input{
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 35px;
-}
+
 
 
 .iconReturnImg{
@@ -152,23 +142,24 @@ input{
   margin-right: 0.6vw;
 }
 .iconRoundTrip{
-  margin:0 1vw 0 1vw;
+  margin:0 1vw 0 4vw;
   width: 2vw;
   margin-bottom: -5px;
 
 }
 input[type="text"]
 {
-    font-size:25px;
+    font-size:20px;
+}
+input[type="submit"]
+{
+  font-size:20px;
 }
 .passenger{
   font-size: 20px;
   display: flex;
   align-items: center;
   margin-right: 25px;
-}
-.passenger input{
-  font-size: 20px;
 }
 .tripType, .fareClass{
 background-color: white;
@@ -177,25 +168,35 @@ font-size: 20px;
 .HomeForm1{
   display: flex;
   justify-content: space-around;
-  margin-bottom: 35px;
+  border-bottom: 2px solid gray;
+  padding-bottom: 20px;
 }
 .noDetail:hover{
 color: $primary-color;
 }
 
-.HomeSearch{
-
+.HomeSearch {
   display: flex;
   justify-content: flex-end;
+ 
+  
 }
 .searchInput{
-  font-size: 20px;
   padding: 5px;
-  background-color: rgb(24, 113, 248);
-  color: white
+  background-color: rgb(26, 117, 252);
+  color: white;
+}
+.searchInput2{
+  padding: 4px;
+  background-color: rgb(156, 156, 156);
+  color: white;
+}
+.searchInput2:hover{
+  background-color: rgb(196, 196, 196);
+  color: rgb(133, 132, 132);
 }
 .searchInput:hover{
-  background-color: rgb(56, 135, 255);
+  background-color: rgb(96, 160, 255);
   color: white;
 }
 
@@ -229,14 +230,14 @@ color: $primary-color;
   top: 0;
   bottom: 0;
   display: block;
-  width: 48vw;
-  height: 45vh;
+  width: 54vw;
+  height: 40vh;
   margin: auto;
 
 }
 
 .inner{
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 0 30px #8b8b8b;
   position: absolute;
   left: 0;
@@ -244,8 +245,8 @@ color: $primary-color;
   top: 0;
   bottom: 0;
   display: block;
-  width: 50vw;
-  height: 45vh;
+  width: 52vw;
+  height: 41vh;
   margin: auto;
 }
 

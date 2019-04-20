@@ -97,7 +97,7 @@ class FromSunmit extends Component {
                 </div>
 
          
-                <div className="input input2">
+                <div className="Flight ">
                 <input defaultValue={this.state.origin} name="origin" type ="text"/>
               
 		              <img className="iconRoundTrip" src="./roundTrip.png"/> 
@@ -122,7 +122,7 @@ class FromSunmit extends Component {
                   ""
                 }
                  <div className="HomeSearch HomeSearch2">
-                <input  type="submit" value="Search"/>
+                <input className="searchInput2" type="submit" value="Search"/>
               </div>
               </div>
  
