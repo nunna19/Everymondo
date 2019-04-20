@@ -62,7 +62,13 @@ class FromSunmit extends Component {
     })
   
   };
-
+  tripType = () =>{
+    if(this.state.tripType !== "roundTrip" ){
+      return  <option name="oneWay" value="oneWay">One Way</option>
+    }else{
+      return <option name="roundTrip" value="roundTrip">Round-trip</option>
+    }
+  }
 
  
 
@@ -79,9 +85,9 @@ class FromSunmit extends Component {
         <form onSubmit={this.handleSubmit}>
                  
               <div className="HomeForm1" >
+              
                 <select defaultValue={this.state.tripType} className="tripType" name="tripType">
-			            <option name="roundTrip" value="roundTrip">Round-trip</option>
-			            <option name="oneWay" value="oneWay">One Way</option>
+			            {this.tripType()}
 		            </select>
                 
                   
