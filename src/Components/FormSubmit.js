@@ -126,13 +126,15 @@ class FromSunmit extends Component {
               </div>
               </div>
  
-             
+ 
   
         </form>
+        
         </div>
         </div>
+        
         <NotificationContainer/>
-
+  
        
       </div>
 

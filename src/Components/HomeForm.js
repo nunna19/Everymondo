@@ -11,6 +11,7 @@ class HomeForm extends Component {
   
     return(
       <div className="HomeForm" >
+      
       <div className="BookForm">
       <form>
      
@@ -53,7 +54,7 @@ class HomeForm extends Component {
               
         
               <div className="HomeSearch">
-              <Link className="linkDeal" to="/NoDetail"><input  type="submit" value="Search" /></Link> 
+              <Link className="linkDeal" to="/NoDetail"><input className="searchInput"  type="submit" value="Search" /></Link> 
               </div>
         </form>
         
