@@ -74,7 +74,7 @@ class Home extends Component {
   render(){
     console.log(this.state.popularFlight)
     return(
-      <div className="home" >
+      <div className="Deal" >
           {this.showPopFlight()}
       </div>
 
