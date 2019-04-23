@@ -42,7 +42,7 @@ class SearchResults extends Component {
 
       
       <div className="SearchResults">
-         <Slider className="slider" max="200" name="priceUSD"  onChange={(e) => this.props.updateSearch(e, "priceUSD")}/>
+         <Slider className="slider"  max="200" name="priceUSD"  onChange={(e) => this.props.updateSearch(e, "priceUSD")}/>
            <span className="sliderText1" >${this.props.priceUSD }</span> 
 
          <Slider className="slider"  min={0} step={100} max={2400} name="departureTime"  onChange={(e) => this.props.updateSearch(e, "departureTime")}/>
