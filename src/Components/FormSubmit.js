@@ -10,18 +10,17 @@ class FromSunmit extends Component {
   constructor() {
     super();
     this.state = {
-      results : [],
-      departureTime:0,
-      priceUSD:0
+   
     };
   }
 
   componentDidMount(){
-    const values = queryString.parse(this.props.location.search)
+    const values = queryString.parse(this.props.location.search)// value from the link veiwDeal 
     console.log(values) 
     this.setState(values)
   }
 
+  
   handleSubmit = (event) => {
     event.preventDefault() 
     let {
@@ -49,9 +48,9 @@ class FromSunmit extends Component {
 
 
     axios.post("https://everymundointernship.herokuapp.com/search/BM88RE94IE35", postObj).then(res=>{
-      console.log(res)
-   
+     
       this.props.setResults(res.data[0].routes)
+      console.log("...go to info want to fillter ",res)
       this.props.history.push('/Filter')
 
     }).catch(err => {
@@ -74,6 +73,7 @@ class FromSunmit extends Component {
 
   render(){
     console.log(this)
+   
     return(
       <div className="popup"> 
         <div className="popup_inner">
